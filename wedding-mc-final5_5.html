@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>결혼식 사회자 이창욱</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400&family=Pretendard:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f5f0e8;--cream:#ede8de;--white:#fdfcfa;
+  --dark:#1c1a18;--text:#2e2b28;--muted:#8a8278;
+  --accent:#c4b49a;--accent2:#a89278;--line:#e0d8cc;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Pretendard','Apple SD Gothic Neo',sans-serif;
+  background:var(--white);color:var(--text);
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+
+/* ── HERO ── */
+.hero{
+  position:relative;height:100svh;min-height:580px;
+  overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;
+  background-image:url('https://i.ibb.co/Xr4j9fGj/Kakao-Talk-20260514-214948965.jpg');
+  background-size:cover;
+  background-position:center 15%;
+  background-attachment:scroll;
+}
+.hero-img{display:none;}
+.hero-scrim{
+  position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:linear-gradient(180deg,rgba(28,26,24,0)0%,rgba(28,26,24,0.08)35%,rgba(28,26,24,0.62)65%,rgba(28,26,24,0.92)100%);
+}
+.hero-content{position:relative;z-index:2;padding:0 28px 52px;}
+.hero-badge{font-size:10px;letter-spacing:0.22em;color:rgba(253,252,250,0.5);text-transform:uppercase;display:block;margin-bottom:16px;opacity:0;animation:fadeUp .7s .2s forwards;}
+.hero-rule{width:22px;height:1px;background:var(--accent);margin-bottom:20px;opacity:0;animation:fadeUp .7s .35s forwards;}
+.hero-title{font-family:'Noto Serif KR',serif;font-size:30px;font-weight:300;line-height:1.7;color:var(--white);margin-bottom:14px;word-break:keep-all;opacity:0;animation:fadeUp .8s .5s forwards;}
+.hero-desc{font-size:14px;line-height:2;color:rgba(253,252,250,0.6);word-break:keep-all;opacity:0;animation:fadeUp .8s .7s forwards;}
+.scroll-hint{position:absolute;bottom:20px;right:24px;z-index:2;display:flex;flex-direction:column;align-items:center;gap:4px;opacity:0;animation:fadeUp .7s 1.2s forwards;}
+.scroll-hint span{font-size:9px;letter-spacing:0.16em;color:rgba(253,252,250,0.3);text-transform:uppercase;}
+.scroll-bar{width:1px;height:26px;background:linear-gradient(rgba(253,252,250,0.4),transparent);}
+
+/* ── 공통 섹션 ── */
+.sec{padding:68px 28px;max-width:600px;margin-left:auto;margin-right:auto;width:100%;}
+.sec-full{width:100%;padding:68px 28px;}
+
+.eyebrow{font-size:10px;letter-spacing:0.22em;color:var(--muted);text-transform:uppercase;margin-bottom:10px;}
+.sec-title{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:300;line-height:1.65;color:var(--dark);margin-bottom:28px;word-break:keep-all;}
+.rule{width:24px;height:1px;background:var(--accent);margin-bottom:28px;}
+
+/* ── 스타일 (흰 배경) ── */
+.style-rows{display:flex;flex-direction:column;}
+.srow{display:flex;align-items:flex-start;gap:16px;padding:20px 0;border-bottom:1px solid var(--line);}
+.srow:first-child{border-top:1px solid var(--line);}
+.snum{font-family:'Noto Serif KR',serif;font-size:16px;font-weight:300;color:var(--accent);min-width:24px;padding-top:2px;flex-shrink:0;}
+.stxt h3{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:5px;line-height:1.5;word-break:keep-all;}
+.stxt p{font-size:13px;color:var(--muted);line-height:1.8;word-break:keep-all;}
+.style-note{margin-top:24px;padding:16px 18px;background:var(--bg);border-left:2px solid var(--accent);font-size:13px;line-height:2;color:var(--muted);word-break:keep-all;}
+
+/* ── 서비스 (베이지 배경 + 리스트형) ── */
+.svc-sec{background:var(--bg);}.svc-sec>.sec{padding-top:0;padding-bottom:0;}
+.svc-list{display:flex;flex-direction:column;max-width:600px;margin-left:auto;margin-right:auto;}
+.svc-item{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:22px 0;border-bottom:1px solid var(--line);
+}
+.svc-item:first-child{border-top:1px solid var(--line);}
+.svc-num{
+  font-family:'Noto Serif KR',serif;
+  font-size:13px;font-weight:300;color:var(--accent2);
+  min-width:22px;padding-top:2px;flex-shrink:0;
+  letter-spacing:0.04em;
+}
+.svc-txt h3{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:5px;line-height:1.5;word-break:keep-all;}
+.svc-txt p{font-size:13px;color:var(--muted);line-height:1.8;word-break:keep-all;}
+
+/* ── 준비 과정 (흰 배경) ── */
+.steps{display:flex;flex-direction:column;position:relative;padding-left:48px;max-width:600px;margin-left:auto;margin-right:auto;}
+.steps::before{content:'';position:absolute;left:16px;top:20px;bottom:20px;width:1px;background:var(--line);}
+.step{position:relative;padding-bottom:28px;}
+.step:last-child{padding-bottom:0;}
+.step-num{position:absolute;left:-48px;width:32px;height:32px;border-radius:50%;background:var(--white);border:1px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Noto Serif KR',serif;font-size:12px;font-weight:300;color:var(--accent2);}
+.step h3{font-size:14px;font-weight:500;color:var(--dark);margin-bottom:4px;padding-top:6px;line-height:1.5;word-break:keep-all;}
+.step p{font-size:12.5px;color:var(--muted);line-height:1.8;word-break:keep-all;}
+
+/* ── 후기 (베이지 배경 + 가로 스크롤) ── */
+.review-outer{width:100%;padding:68px 0;background:var(--bg);}
+.review-head{padding:0 28px;margin-bottom:28px;max-width:600px;margin-left:auto;margin-right:auto;}
+.review-scroll{
+  display:flex;gap:12px;overflow-x:auto;
+  padding:4px 28px 16px;
+  scroll-snap-type:x mandatory;
+  -webkit-overflow-scrolling:touch;
+  scrollbar-width:none;
+}
+.review-scroll::-webkit-scrollbar{display:none;}
+.review-card{
+  flex-shrink:0;scroll-snap-align:start;
+  width:min(272px,78vw);
+  background:var(--white);
+  border-radius:14px;padding:22px 20px;
+  display:flex;flex-direction:column;
+  border:1px solid var(--line);
+}
+.review-stars{display:flex;gap:3px;margin-bottom:14px;}
+.star{color:var(--accent);font-size:11px;}
+.review-quote{font-size:13px;line-height:2;color:var(--text);word-break:keep-all;flex:1;}
+.review-quote::before{content:'"';font-size:24px;line-height:1;color:var(--accent);display:block;margin-bottom:8px;opacity:0.6;font-family:'Noto Serif KR',serif;}
+.review-from{display:flex;align-items:center;gap:8px;padding-top:14px;margin-top:14px;border-top:1px solid var(--line);}
+.review-dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+.review-name{font-size:11px;color:var(--muted);}
+.review-hint{padding:4px 28px 0;font-size:10px;color:rgba(196,180,154,0.65);letter-spacing:0.04em;}
+
+/* ── FAQ (흰 배경) ── */
+.faq-list{display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid var(--line);}
+.faq-item:first-child{border-top:1px solid var(--line);}
+.faq-q{display:flex;align-items:flex-start;justify-content:space-between;gap:14px;padding:20px 0;cursor:pointer;-webkit-tap-highlight-color:transparent;}
+.faq-q-text{font-size:14px;font-weight:500;color:var(--dark);line-height:1.55;word-break:keep-all;}
+.faq-icon{width:22px;height:22px;flex-shrink:0;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:16px;transition:transform .3s,background .2s,border-color .2s;margin-top:1px;}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--accent);color:var(--white);border-color:var(--accent);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease;}
+.faq-a-inner{padding:0 0 22px;}
+.faq-p{font-size:13px;line-height:2.05;color:#6a6260;word-break:keep-all;margin-bottom:10px;}
+.faq-p:last-child{margin-bottom:0;}
+.faq-item.open .faq-a{max-height:800px;}
+
+/* ── CTA (다크 — 여기만) ── */
+.cta-sec{padding:80px 28px;text-align:center;background:var(--dark);}
+.cta-sec .eyebrow{color:var(--accent);margin-bottom:16px;}
+.cta-title{font-family:'Noto Serif KR',serif;font-size:24px;font-weight:300;line-height:1.8;color:var(--white);margin-bottom:12px;word-break:keep-all;}
+.cta-sub{font-size:13px;line-height:2;color:rgba(253,252,250,0.5);margin-bottom:36px;word-break:keep-all;}
+.btn-kakao{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 36px;background:#FEE500;color:#1c1a18;font-size:14px;font-weight:600;text-decoration:none;border-radius:3px;transition:all .2s;}
+.btn-kakao:active{background:#f0d800;transform:scale(0.98);}
+.cta-note{margin-top:14px;font-size:12px;color:rgba(253,252,250,0.32);}
+
+/* ── FOOTER ── */
+footer{padding:32px 28px;text-align:center;border-top:1px solid rgba(255,255,255,0.08);background:var(--dark);}
+footer p{font-size:11px;color:rgba(253,252,250,0.3);line-height:2;}
+footer a{color:rgba(253,252,250,0.3);text-decoration:none;}
+
+/* ── ANIM ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s;}
+.rv.on{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.07s;}.d2{transition-delay:.14s;}.d3{transition-delay:.21s;}.d4{transition-delay:.28s;}
+
+/* ── PC (768px+) ── */
+@media(min-width:768px){
+  .hero{flex-direction:row;align-items:center;}
+  .hero-img{object-position:60% center;}
+  .hero-scrim{background:linear-gradient(90deg,rgba(28,26,24,0.88)0%,rgba(28,26,24,0.6)45%,rgba(28,26,24,0)85%);}
+  .hero-content{padding:0 0 0 64px;max-width:500px;}
+  .hero-title{font-size:clamp(28px,3.2vw,42px);}
+
+  .sec{padding:88px 48px;max-width:680px;margin:0 auto;width:100%;}
+  .sec-full{padding:88px 48px;}
+  .review-outer{padding:88px 0;}
+  .review-head{padding:0 48px;max-width:680px;margin:0 auto 32px;}
+  .review-scroll{padding:4px 48px 20px;}
+  .review-hint{padding:4px 48px 0;}
+  .review-card{width:300px;}
+  .cta-sec{padding:100px 48px;}
+  .cta-title{font-size:28px;}
+  .sec-title{font-size:26px;}
+
+  /* 서비스 PC에서 2열 그리드로 */
+  .svc-list{display:grid;grid-template-columns:1fr 1fr;gap:0;max-width:680px;margin:0 auto;}
+  .svc-item{padding:24px 20px 24px 0;border-bottom:1px solid var(--line);border-right:none;}
+  .svc-item:nth-child(odd){padding-right:32px;border-right:1px solid var(--line);}
+  .svc-item:nth-child(even){padding-left:32px;padding-right:0;}
+  .svc-item:first-child,.svc-item:nth-child(2){border-top:1px solid var(--line);}
+
+  .step-num{background:var(--white);}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img class="hero-img" src="" alt="결혼식 사회자 이창욱">
+  <div class="hero-scrim"></div>
+  <div class="hero-content">
+    <span class="hero-badge">Wedding MC · 이창욱</span>
+    <div class="hero-rule"></div>
+    <h1 class="hero-title">편안하고 자연스러운<br>예식을 만들어갑니다.</h1>
+    <p class="hero-desc">두 분의 이야기로 채워지는<br>그날을 함께 만들어갑니다.</p>
+  </div>
+  <div class="scroll-hint"><div class="scroll-bar"></div><span>scroll</span></div>
+</section>
+
+<!-- 진행 스타일 — 흰 배경 -->
+<section class="sec">
+  <p class="eyebrow rv">Style</p>
+  <h2 class="sec-title rv">어떤 진행을 하나요?</h2>
+  <div class="rule rv"></div>
+  <div class="style-rows rv">
+    <div class="srow"><span class="snum">01</span><div class="stxt"><h3>과하지 않고 자연스러운 진행</h3><p>연출보다 흐름을 중요하게 생각합니다. 두 분이 있는 그대로 빛날 수 있도록.</p></div></div>
+    <div class="srow"><span class="snum">02</span><div class="stxt"><h3>두 사람의 이야기가 담긴 멘트</h3><p>같은 예식이 하나도 없습니다. 두 분만의 이야기를 자연스럽게 담아냅니다.</p></div></div>
+    <div class="srow"><span class="snum">03</span><div class="stxt"><h3>하객분들도 함께 공감하는 분위기</h3><p>예식장 전체가 하나가 되는 순간을 만듭니다.</p></div></div>
+    <div class="srow"><span class="snum">04</span><div class="stxt"><h3>예식 흐름이 끊기지 않는 안정적인 진행</h3><p>오랜 경험에서 나오는 자연스러운 흐름 조절로 예식 전체를 안정감 있게 이끕니다.</p></div></div>
+    <div class="srow"><span class="snum">05</span><div class="stxt"><h3>그 자리에 있는 모든 분들을 생각합니다</h3><p>신랑 신부님과 부모님, 그리고 모든 하객분들의 감정선을 고려하며 진행합니다.</p></div></div>
+  </div>
+  <div class="style-note rv">단순히 예식 당일 사회만 보는 것이 아니라,<br>예식 전 준비 과정부터 함께 정리하며<br>두 분에게 가장 자연스러운 분위기를 만들어갑니다.</div>
+</section>
+
+<!-- 서비스 — 베이지 배경 + 리스트형 -->
+<div class="sec-full svc-sec">
+  <div class="sec" style="padding-top:0;padding-bottom:0;">
+    <p class="eyebrow rv">Service</p>
+    <h2 class="sec-title rv">예약 시 이런 부분들을<br>준비해드립니다</h2>
+    <div class="rule rv"></div>
+    <div class="svc-list rv">
+      <div class="svc-item"><span class="svc-num">01</span><div class="svc-txt"><h3>샘플 제공</h3><p>혼인서약서·성혼선언문부터<br>입장·행진 음원까지<br>미리 참고하실 수 있게 보내드립니다</p></div></div>
+      <div class="svc-item"><span class="svc-num">02</span><div class="svc-txt"><h3>예식 흐름 정리</h3><p>두 분 분위기에 맞게<br>식순과 흐름을 정리합니다</p></div></div>
+      <div class="svc-item"><span class="svc-num">03</span><div class="svc-txt"><h3>입장 · 행진 멘트 구성</h3><p>두 분다운 분위기로<br>중요한 순간들을 준비합니다</p></div></div>
+      <div class="svc-item"><span class="svc-num">04</span><div class="svc-txt"><h3>입장곡 · 행진곡 체크</h3><p>예식 분위기에 맞게<br>음원과 흐름을 확인합니다</p></div></div>
+      <div class="svc-item"><span class="svc-num">05</span><div class="svc-txt"><h3>웨딩홀 전달 파일 정리</h3><p>웨딩홀 전달 파일들을<br>빠뜨린 것 없이 정리합니다</p></div></div>
+      <div class="svc-item"><span class="svc-num">06</span><div class="svc-txt"><h3>예식 전 최종 체크</h3><p>당일 놓치기 쉬운 부분들을<br>미리 안내합니다</p></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- 준비 과정 — 흰 배경 -->
+<section class="sec">
+  <p class="eyebrow rv">Process</p>
+  <h2 class="sec-title rv">예식은 이런 흐름으로<br>진행됩니다</h2>
+  <div class="rule rv"></div>
+  <div class="steps rv">
+    <div class="step"><div class="step-num">1</div><h3>예약 확정</h3><p>예식 날짜와 장소를 확인하고 예약을 확정합니다</p></div>
+    <div class="step"><div class="step-num">2</div><h3>안내사항 전달 및 샘플 제공</h3><p>준비에 필요한 안내사항과 참고하실 수 있는 샘플을 먼저 보내드립니다</p></div>
+    <div class="step"><div class="step-num">3</div><h3>설문 자료 수집 및 식순 정리</h3><p>보내드린 설문 자료를 작성해 주시면 두 분께 맞는 식순을 정리합니다</p></div>
+    <div class="step"><div class="step-num">4</div><h3>웨딩홀 전달 파일 정리</h3><p>웨딩홀에 전달하실 파일들을 빠뜨린 것 없이 정리합니다</p></div>
+    <div class="step"><div class="step-num">5</div><h3>웨딩홀에 파일 전달</h3><p>함께 정리한 파일들을 가지고 웨딩홀에 직접 전달해 주시면 됩니다</p></div>
+    <div class="step"><div class="step-num">6</div><h3>멘트 준비</h3><p>최종 파일을 토대로 두 분의 이야기가 담긴 멘트를 직접 작성합니다</p></div>
+    <div class="step"><div class="step-num">7</div><h3>예식 전 최종 체크 안내</h3><p>당일 전 체크하시면 좋은 부분들을 미리 안내합니다</p></div>
+    <div class="step"><div class="step-num">8</div><h3>예식 당일 진행</h3><p>준비한 모든 것을 자연스럽게 담아 진행합니다</p></div>
+  </div>
+</section>
+
+<!-- 후기 — 베이지 배경 -->
+<div class="review-outer">
+  <div class="review-head">
+    <p class="eyebrow rv">Review</p>
+    <h2 class="sec-title rv">결혼식을 함께한 분들의<br>이야기입니다</h2>
+    <div class="rule rv"></div>
+  </div>
+  <div class="review-scroll rv">
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-quote">준비하면서 걱정이 정말 많았는데, 식순부터 하나씩 같이 정리해주셔서 전혀 부담스럽지 않았어요. 당일 진행도 너무 자연스럽고 따뜻해서 하객분들도 정말 좋아해주셨습니다.</p>
+      <div class="review-from"><div class="review-dot"></div><span class="review-name">김○○ 신부님</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-quote">정말 멋진 사회를 해주셔서 너무 감사드려요. 덕분에 결혼식이 깔끔하고 즐겁게 마무리됐어요. 센스 있게 진행해주시고, 주변 지인들에게도 꼭 추천하겠습니다.</p>
+      <div class="review-from"><div class="review-dot"></div><span class="review-name">박○○ 신부님</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-quote">준비 과정에서 정신이 없었는데, 제가 미처 신경 쓰지 못한 부분들을 먼저 챙겨주셔서 정말 완벽하게 마무리됐습니다. 진심으로 감사드려요.</p>
+      <div class="review-from"><div class="review-dot"></div><span class="review-name">이○○ 신부님</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-quote">부모님이 많이 우셔서 진행이 어려우셨을 텐데 부드럽게 챙겨봐 주시고, 파일 정리도 꼼꼼하게 해주셔서 정말 도움이 많이 됐어요.</p>
+      <div class="review-from"><div class="review-dot"></div><span class="review-name">최○○ 신부님</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-quote">사회자님 멘트 덕분에 울지 않고 잘 할 수 있었던 것 같아요. 진행해주신 분위기가 너무 좋아서 주변에 소개 많이 해드리고 싶어요.</p>
+      <div class="review-from"><div class="review-dot"></div><span class="review-name">정○○ 신부님</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-quote">중간중간 상황에 맞는 센스 있는 멘트들이 정말 인상적이었어요. 식 전에도 많이 도와주신 덕분에 예식 준비가 훨씬 편안했습니다.</p>
+      <div class="review-from"><div class="review-dot"></div><span class="review-name">강○○ 신랑님</span></div>
+    </div>
+    <div class="review-card">
+      <div class="review-stars"><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span></div>
+      <p class="review-quote">어르신들이 사회자분 정말 매끄럽고 목소리도 너무 좋다고 칭찬을 많이 하셨어요. 하객분들 반응이 정말 좋았고 100% 만족한 결혼식이었습니다.</p>
+      <div class="review-from"><div class="review-dot"></div><span class="review-name">한○○ 신부님</span></div>
+    </div>
+  </div>
+  <div class="review-hint rv">밀어서 더 보기 →</div>
+</div>
+
+<!-- FAQ — 흰 배경 -->
+<section class="sec">
+  <p class="eyebrow rv">FAQ</p>
+  <h2 class="sec-title rv">자주 묻는 질문</h2>
+  <div class="rule rv"></div>
+  <div class="faq-list rv">
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">예식 진행 분위기는 어떻게 되나요?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">
+        <p class="faq-p">원하시는 분위기에 맞춰 자연스럽게 진행해드리고 있습니다.</p>
+        <p class="faq-p">별도로 원하시는 방향이 없으신 경우에는,<br>너무 무겁거나 과하지 않은 선에서<br>하객분들도 함께 공감하실 수 있는<br>편안한 분위기를 중요하게 생각하며 진행하고 있어요.</p>
+      </div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">예식 당일에는 언제 도착하시나요?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">
+        <p class="faq-p">보통 예식 시작 20~30분 전에 도착하고 있어요.</p>
+        <p class="faq-p">도착 후에는 웨딩홀 담당자 미팅,<br>식순 최종 체크, 사전 안내 방송 등을<br>함께 챙겨드립니다.</p>
+      </div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">음원(BGM/MR)은 어떻게 준비하면 되나요?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">
+        <p class="faq-p">입장곡, 행진곡 음원 추출이나 간단한 편집은<br>함께 도와드리고 있어요.</p>
+        <p class="faq-p">다만 구하기 어려운 음원이거나<br>별도 편집이 많이 필요한 경우에는<br>개인적으로 준비를 부탁드릴 수 있습니다.</p>
+      </div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">미팅은 어떻게 진행되나요?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">
+        <p class="faq-p">개별 카카오톡방을 통해 편하게 소통하고 있어요.<br>설명이 필요한 부분은 전화로 안내드리고 있습니다.</p>
+        <p class="faq-p">대면 미팅을 원하시는 경우에는<br>일정을 조율해서 따로 진행도 가능해요.</p>
+      </div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">대본과 멘트는 언제 받을 수 있나요?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">
+        <p class="faq-p">최종 파일들이 모두 정리되면<br>그 내용을 바탕으로 멘트 작성을 진행하고 있어요.</p>
+        <p class="faq-p">보통 예식 마지막 주 평일 중에 전달드리고 있으며,<br>수정이 필요한 부분은 편하게 말씀해 주시면 됩니다.</p>
+        <p class="faq-p">웨딩홀에는 식순지만 전달해 주시면 진행 가능해요.</p>
+      </div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">멘트는 직접 작성해주시나요?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">
+        <p class="faq-p">두 분의 이야기와 분위기를 바탕으로<br>직접 작성해서 보내드리고 있습니다.</p>
+        <p class="faq-p">미리 충분히 확인하고 수정하실 수 있도록 전달드리고 있어요.<br>과하게 꾸미기보다는 두 분께 자연스럽게 어울리는<br>분위기를 중요하게 생각하고 있습니다.</p>
+      </div></div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q"><span class="faq-q-text">전체 대본도 작성 가능한가요?</span><span class="faq-icon">+</span></div>
+      <div class="faq-a"><div class="faq-a-inner">
+        <p class="faq-p">가능은 하지만,<br>부분 대본 형태를 가장 추천드리고 있어요.</p>
+        <p class="faq-p">입장, 맞절, 행진 등 중요한 파트 위주로 대본을 활용하고 있습니다.<br>모든 식순을 대본화하면 현장 흐름이 딱딱해질 수 있거든요.</p>
+        <p class="faq-p">원하시는 경우 필요한 파트를 추가해서<br>함께 준비해드릴게요.</p>
+      </div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA — 다크만 -->
+<div class="cta-sec">
+  <p class="eyebrow rv">Contact</p>
+  <h2 class="cta-title rv">처음이라 모르는 게 많으셔도 괜찮아요.<br>식순부터 분위기, 멘트까지<br>하나씩 함께 준비해드릴게요.</h2>
+  <p class="cta-sub rv">식순부터 분위기, 멘트까지<br>편하게 문의해 주세요 🙂</p>
+  <a href="https://open.kakao.com/o/s4iwdX8e" target="_self" class="btn-kakao rv">
+    <svg width="17" height="17" viewBox="0 0 18 18" fill="none"><path d="M9 1.5C4.86 1.5 1.5 4.19 1.5 7.5c0 2.1 1.28 3.94 3.22 5.06l-.82 2.94 3.4-2.18c.55.09 1.12.18 1.7.18 4.14 0 7.5-2.69 7.5-6s-3.36-6-7.5-6z" fill="#1c1a18"/></svg>
+    카카오로 문의하기
+  </a>
+  <p class="cta-note rv">보통 당일 답변드립니다 🙂</p>
+</div>
+
+<footer>
+  <p>결혼식 사회자 이창욱<br>Instagram <a href="https://instagram.com/wedding__uk" target="_blank">@wedding__uk</a><br><br>© <span id="year"></span> 결혼식 사회자 이창욱</p>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+var io = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+  });
+}, {threshold: 0.1});
+document.querySelectorAll('.rv').forEach(function(el) { io.observe(el); });
+
+document.querySelectorAll('.faq-q').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var item = btn.parentElement;
+    var isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+    if (!isOpen) item.classList.add('open');
+  });
+});
+
+
+</script>
+</body>
+</html>
